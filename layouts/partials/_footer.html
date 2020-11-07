@@ -1,3 +1,12 @@
+<div class="fabs">
+    <button class="btn-toggle-theme btn"><i class="fas fa-adjust"></i></button>
+    {{ if .IsTranslated }}
+        {{ range $.Site.Home.AllTranslations }}
+            <a href="{{ .RelPermalink }}" class="btn">{{ .Language.LanguageName }}</a>
+        {{ end }}
+    {{ end }}
+</div>
+
 <footer>
     &copy; {{ now.Format "2006" }} {{ range .Site.Author }}{{ . }}{{ end }}.
     {{ i18n "themeby" }} <a href="https://www.spech.de" target="_blank" rel="noopener noreferrer">Sebastian Pech</a>.

@@ -45,12 +45,12 @@ theme="flex-bp-hugo-cv"
 
 [languages]
   [languages.en]
-    languageName = "English"
+    languageName = "EN"
     title = "CV"
     weight = 1
     [languages.en.params]
   [languages.de]
-    languageName = "Deutsch"
+    languageName = "DE"
     title = "Lebenslauf"
     weight = 2
     [languages.de.params]

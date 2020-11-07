@@ -89,6 +89,7 @@ h1 {
 h2 {
     border-bottom: 1px solid #2E74B5;
     margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
     color: #2E74B5;
     text-transform: uppercase;
 }
@@ -112,7 +113,7 @@ img {
 
 nav {
 	position: sticky;
-	top: 2rem;
+	top: 0px;
     white-space: nowrap;
 }
 
@@ -136,7 +137,6 @@ nav ul li:hover {
 
 body.dark-theme nav ul li:hover {
     background: #444444;
-    transition: all 400ms ease-in-out;
 }
 
 nav ul li.active {
@@ -146,5 +146,31 @@ nav ul li.active {
 
 body.dark-theme nav ul li.active {
     background: #444444;
-    transition: all 200ms ease-in-out;
+}
+
+/*******************************************************************************
+ * fabs
+ ******************************************************************************/
+.fabs {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.fabs .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #2E74B5;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin: 4px;
+}
+
+body.dark-theme .fabs .btn {
+    background: #444444;
 }

@@ -8,17 +8,9 @@
     <img src="{{ $photoimg.RelPermalink }}" width="{{ $photoimg.Width }}" height="{{ $photoimg.Height }}" alt="{{ $alt }}" />
 {{ end }}
 
-<button class="btn-toggle-theme">Toggle Dark Mode</button>
-
-{{ if .IsTranslated }}
-    <h5>{{ i18n "translations" }}</h5>
-    {{ range $.Site.Home.AllTranslations }}
-        <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
-    {{ end }}
-{{ end }}
-
 <nav>
     <ul>
+        <li><a href="#">Zombie 2</a></li>
         <li><a href="#section-test-2">Zombie 2</a></li>
         <li><a href="#section-test-7">Zombie 7</a></li>
         <li><a href="#section-test-10">Zombie 10</a></li>
