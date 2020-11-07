@@ -46,10 +46,11 @@ body.dark-theme .sidebar {
 
 main {
     background: #ffffff;
+    padding: 2rem;
 }
 
 body.dark-theme main {
-    background: #444;
+    background: #444444;
 }
 
 /*******************************************************************************
@@ -79,12 +80,25 @@ body.dark-theme main {
  * Elements
  ******************************************************************************/
 
+h1 {
+    color: #2E74B5;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+h2 {
+    border-bottom: 1px solid #2E74B5;
+    margin-top: 1.5rem;
+    color: #2E74B5;
+    text-transform: uppercase;
+}
+
 a {
-    color: #ff0000;
+    color: #2E74B5;
 }
 
 body.dark-theme a {
-    color: #ff0000;
+    color: #2E74B5;
 }
 
 img {
@@ -111,11 +125,26 @@ nav ul {
 nav ul li a {
     display: block;
     padding: 0.5rem 1rem;
-    color: red;
+    color: #2E74B5;
     text-decoration: none;
 }
 
+nav ul li:hover {
+    background: #ffffff;
+    transition: all 400ms ease-in-out;
+}
+
+body.dark-theme nav ul li:hover {
+    background: #444444;
+    transition: all 400ms ease-in-out;
+}
+
 nav ul li.active {
-    background: black;
+    background: #ffffff;
+    transition: all 200ms ease-in-out;
+}
+
+body.dark-theme nav ul li.active {
+    background: #444444;
     transition: all 200ms ease-in-out;
 }

@@ -1,1 +1,4 @@
-Footer
+<footer>
+    &copy; {{ now.Format "2006" }} {{ range .Site.Author }}{{ . }}{{ end }}.
+    {{ i18n "themeby" }} <a href="https://www.spech.de" target="_blank" rel="noopener noreferrer">Sebastian Pech</a>.
+</footer>
