@@ -8,6 +8,10 @@
     margin: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 /*******************************************************************************
  * Flexbox and base colors
  ******************************************************************************/
@@ -33,19 +37,19 @@ body.dark-theme {
 }
 
 .sidebar {
-    background: green;
+    background: #eeeeee;
 }
 
 body.dark-theme .sidebar {
-    background: red;
+    background: #333333;
 }
 
 main {
-    background: green;
+    background: #ffffff;
 }
 
 body.dark-theme main {
-    background: red;
+    background: #444;
 }
 
 /*******************************************************************************
@@ -81,4 +85,37 @@ a {
 
 body.dark-theme a {
     color: #ff0000;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/*******************************************************************************
+ * Navigaton
+ ******************************************************************************/
+
+nav {
+	position: sticky;
+	top: 2rem;
+    white-space: nowrap;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: red;
+    text-decoration: none;
+}
+
+nav ul li.active {
+    background: black;
+    transition: all 200ms ease-in-out;
 }
