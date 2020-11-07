@@ -23,6 +23,7 @@ Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootst
   - [Schema.org support](#schemaorg-support)
   - [Social Icons](#social-icons)
   - [Custom CSS/JS](#custom-cssjs)
+  - [Misc](#misc)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -166,3 +167,8 @@ csscdn:
     - https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900
 ---
 ```
+
+## Misc
+
+- Dog Photo - Image by [Nikki Luijpers](https://pixabay.com/users/lovechicco-14817111/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5692796) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5692796).
+- [CSS Tricks - A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)

@@ -1,0 +1,84 @@
+/*******************************************************************************
+ * Reset
+ ******************************************************************************/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*******************************************************************************
+ * Flexbox and base colors
+ ******************************************************************************/
+
+body {
+    display: flex;
+    justify-content: center;
+
+    min-height: 100vh;        
+
+    color: #222;
+    background: #c0c0c0;
+}
+
+body.dark-theme {
+    color: #eee;
+    background: #121212;
+}
+
+.container {
+    display: flex;
+	flex-direction: column;
+}
+
+.sidebar {
+    background: green;
+}
+
+body.dark-theme .sidebar {
+    background: red;
+}
+
+main {
+    background: green;
+}
+
+body.dark-theme main {
+    background: red;
+}
+
+/*******************************************************************************
+ * Desktop
+ ******************************************************************************/
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80vw;
+    }
+
+    main {
+        order: 2;
+        flex: 5;
+        min-height: 100vh;
+    }
+    
+    .sidebar {
+        order: 1;
+        flex: 1;
+    }
+}
+
+/*******************************************************************************
+ * Elements
+ ******************************************************************************/
+
+a {
+    color: #ff0000;
+}
+
+body.dark-theme a {
+    color: #ff0000;
+}

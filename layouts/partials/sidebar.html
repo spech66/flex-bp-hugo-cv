@@ -1,0 +1,11 @@
+{{ $photoimg := resources.Get "photo.jpg" }}
+{{ $alt := "Photo" }}
+
+{{ if gt $photoimg.Width 320 }}
+    {{ $image := $photoimg.Resize "320x" }}
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
+{{ else }}
+    <img src="{{ $photoimg.RelPermalink }}" width="{{ $photoimg.Width }}" height="{{ $photoimg.Height }}" alt="{{ $alt }}" />
+{{ end }}
+
+Sidebar
