@@ -73,7 +73,7 @@ TODO
 
 ## Screenshots of cofigurations
 
-TODO
+![CV Theme](https://raw.githubusercontent.com/spech66/flex-bp-hugo-cv/master/images/tn.png)
 
 ## Google Analytics
 

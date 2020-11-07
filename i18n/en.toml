@@ -1,0 +1,40 @@
+[readmore]
+other = "Read more"
+
+[lastupdated]
+other = "last updated"
+
+[readingTime]
+one = "1 Minute"
+other = "{{.Count}} Minutes"
+
+[social]
+other = "Social"
+
+[site]
+other = "Site"
+
+[translations]
+other="Translations"
+
+[themeby]
+other = "Theme by"
+
+[madeby]
+other = "Made by"
+
+[error404]
+other = "We are really sorry but there seems to be nothing here."
+
+[gotohome]
+other = "Go to Homepage"
+
+# Taxonomoy title hack
+[Categories]
+other = "Categories"
+[Categorie]
+other = "Categorie"
+[Tags]
+other = "Tags"
+[Tag]
+other = "Tag"

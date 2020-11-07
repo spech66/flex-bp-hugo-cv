@@ -1,14 +1,105 @@
+ignoreFiles = ["content/portfolio/\\.*","content/product/\\.*","content/sketch/\\.*","content/homepage/\\.*","content/post/\\.*","content/\\.*"] # disable example pages as this is a single page
 baseURL = "https://gohugo.io"
 title = "Hugo Themes"
-author = "Steve Francia"
-copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
-paginate = 3
+# author = "Steve Francia"
+# copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+# paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ["error-remote-getjson"]
+
+# Theme specific examples
+author = "Sebastian Pech"
+copyright = "Sebastian Pech"
+# googleAnalytics = "UA-123-45"
+enableRobotsTXT = true
+pygmentsCodeFences = true
+canonifyurls = true
+paginate = 6
+theme="flex-bp-hugo-cv"
+
+[sitemap]
+    changefreq = "weekly"
+    priority = 0.5
+
+[permalinks]
+    posts = "/:year/:month/:slug/"
+    post = "/:year/:month/:slug/"
+    pages = "/:slug/"
+    page = "/:slug/"
+
+[Author]  
+  name = "Sebastian Pech"
+
+[params]
+  description = "Text about the site"
+  customDateFormat = "02.01.2006"
+  # themeColor="light" # dark, light
+  # js=["/js/test_site.js"]
+  # css=["/css/test_site.css"]
+  # csscdn=["https://fonts.googleapis.com/css?family=Concert+One|Roboto&display=swap"]
+
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "CV"
+    weight = 1
+    [languages.en.params]
+  [languages.de]
+    languageName = "Deutsch"
+    title = "Lebenslauf"
+    weight = 2
+    [languages.de.params]
+
+
+# Sets Social Media icons to appear and link to your account. Value should be your
+# username unless otherwise noted.
+# Code from https://themes.gohugo.io/future-imperfect/ theme
+[social]
+  # Coding Communities
+  github           = "spech66"
+  gitlab           = ""
+  stackoverflow    = "" # User Number
+  bitbucket        = ""
+  jsfiddle         = ""
+  codepen          = ""
+  # Visual Art Communities
+  deviantart       = ""
+  flickr           = ""
+  behance          = ""
+  dribbble         = ""
+  # Publishing Communities
+  wordpress        = ""
+  medium           = ""
+  # Professional/Business Oriented Communities
+  linkedin         = "sebastian-pech"
+  linkedin_company = ""
+  foursquare       = ""
+  xing             = "Sebastian_Pech3"
+  slideshare       = ""
+  # Social Networks
+  facebook         = "spechde" # https://fb.me/flowartsde
+  googleplus       = ""
+  reddit           = ""
+  quora            = ""
+  youtube          = "" 
+  vimeo            = ""
+  whatsapp         = "" # WhatsApp Number
+  instagram        = "sebastian_pech"
+  tumblr           = ""
+  twitter          = "spech84"
+  skype            = ""
+  snapchat         = ""
+  pinterest        = ""
+  telegram         = ""
+  discord          = "" # invite link
+  # Email
+  email            = ""
+
 
 [menu]
 
@@ -19,9 +110,6 @@ ignoreErrors = ["error-remote-getjson"]
     weight = 10
 
 [taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
 
 [privacy]
 
