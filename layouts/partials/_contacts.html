@@ -2,9 +2,11 @@
 {{ with $data }}
 <section id="section-{{ .Title | urlize }}">
     <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
-    {{ range $data.Contacts }}
-        <p><i class="{{ .Icon }}"></i> {{ .Name }}: {{ .Value }}</p>
-    {{ end }}
+    <ul class="listspecial">
+        {{ range $data.Contacts }}
+            <li><strong><i class="{{ .Icon }}"></i> {{ .Name }}</strong>{{ .Value }}</p>
+        {{ end }}
+    </ul>
     <ul>
         {{- partial "social.html" $ -}}
     </ul>

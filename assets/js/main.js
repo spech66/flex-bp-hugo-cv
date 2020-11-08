@@ -30,9 +30,13 @@ window.addEventListener('DOMContentLoaded', () => {
 		entries.forEach(entry => {
 			const id = entry.target.getAttribute('id');
 			if (entry.intersectionRatio > 0) {
-				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+				if(document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
+					document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
+				}
 			} else {
-				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+				if(document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
+					document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.remove('active');
+				}
 			}
 		});
 	});

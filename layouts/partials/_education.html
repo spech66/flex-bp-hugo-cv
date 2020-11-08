@@ -4,9 +4,14 @@
     <section id="section-{{ .Title | urlize }}">
         <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
         {{ range .Sections }}
-            <h3>{{ .Name }}</h3>
-            {{ .Organisation }} {{ .Website }} {{ .StartDate }} {{ .EndDate }}
-            {{ .Qualification }}
+            <div class="innerContainer">
+                <h3 class="innerLeft">{{ .StartDate }}<br />-<br/> {{ .EndDate }}</h3>
+                <div class="innerRight">
+                    <h3>{{ .Name }}</h3>
+                    <p><a href="{{ .Website }}" target="_blank" rel="noopener noreferrer">{{ .Organisation }}</a></p>
+                    <p>{{ .Qualification }}</p>
+                </div>
+            </div>
         {{ end }}
     </section>
     {{ end }}

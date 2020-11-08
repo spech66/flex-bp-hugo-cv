@@ -8,6 +8,10 @@
     margin: 0;
 }
 
+ul, ol {
+    list-style: none;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -54,6 +58,29 @@ body.dark-theme main {
 }
 
 /*******************************************************************************
+ * Inner Flexbox
+ ******************************************************************************/
+
+.innerContainer {
+    display: flex;
+	flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 2rem;
+}
+
+.innerLeft {
+    flex: 0 0 160px;
+}
+
+.innerRight {
+    flex: 1 1 auto;
+}
+
+.innerRight p {
+    margin: 0 0 0.6rem;
+}
+
+/*******************************************************************************
  * Desktop
  ******************************************************************************/
 
@@ -72,7 +99,7 @@ body.dark-theme main {
     
     .sidebar {
         order: 1;
-        flex: 1;
+        flex: 1.4;
     }
 }
 
@@ -84,14 +111,33 @@ h1 {
     color: #2E74B5;
     text-transform: uppercase;
     font-size: 4rem;
+    letter-spacing: 1.4px;
+}
+
+.subtitle {
+    color: #c0c0c0;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+body.dark-theme .subtitle {
+    color: #121212;
 }
 
 h2 {
     border-bottom: 1px solid #2E74B5;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1.6rem;
+    margin-bottom: 0.8rem;
     color: #2E74B5;
     text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 a, a:link, a:active {
@@ -117,6 +163,45 @@ footer {
     margin-top: 2rem;
 }
 
+section {
+    margin-left: 40px;
+}
+section h2 {
+    margin-left: -40px;
+}
+
+.listspecial li {
+    margin: 0 0 0.6rem;
+}
+
+.listspecial li strong {
+    font-weight: 600;
+    display: inline-block;
+    width: 160px;
+}
+
+.listsimple li {
+    margin: 0 0 0.6rem;
+    list-style: disc;
+    list-style-position: inside;
+}
+
+.listsimple ::marker {
+    color: #2E74B5;
+}
+
+.list-inline-item {
+    display: inline-block;
+}
+
+.tag {
+    border-radius: 8px;
+    text-align: center;
+    background-color: #2E74B5;
+    color: #ffffff;
+    padding: 2px 8px;
+}
+
 /*******************************************************************************
  * Navigaton
  ******************************************************************************/
@@ -128,7 +213,6 @@ nav {
 }
 
 nav ul {
-    list-style: none;
     margin: 0;
     padding: 0;
 }

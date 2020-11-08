@@ -3,10 +3,10 @@
     {{ with . }}
     <section id="section-{{ .Title | urlize }}">
         <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
-        <ul>
-        {{ range .Items }}
-            <li>{{ . }}</li>
-        {{ end }}
+        <ul class="listsimple">
+            {{ range .Items }}
+                <li>{{ . }}</li>
+            {{ end }}
         </ul>
     </section>
     {{ end }}

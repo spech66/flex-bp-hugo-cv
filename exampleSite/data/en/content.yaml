@@ -26,7 +26,7 @@ PersonalData:
 
 BriefProfile:
   Title: Brief Profile
-  Icon: fas fa-user
+  Icon: fas fa-th-list
   Sections:
     - Name: Strengths
       Items:
@@ -49,8 +49,8 @@ Experience:
     - Name: Rescue dog
       Empolyer: ACME Police
       Website: https://www.example.org
-      StartDate: 01.01.2018
-      EndDate:
+      StartDate: 01/2018
+      EndDate: Today
       Details:
         - Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
         - De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia.
@@ -59,8 +59,8 @@ Experience:
     - Name: Rescue dog
       Empolyer: ABCD Police
       Website: https://www.example.com
-      StartDate: 01.06.2014
-      EndDate: 31.12.2017
+      StartDate: 06/2014
+      EndDate: 12/2017
       Details:
         - Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.
         - The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus.
@@ -69,8 +69,8 @@ Experience:
     - Name: Guard dog
       Empolyer: XYZ Guard dogs
       Website: https://www.example.com
-      StartDate: 01.01.2010
-      EndDate: 30.05.2014
+      StartDate: 01/2010
+      EndDate: 05/2014
       Details:
         - Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave feeding iride et serpens.
         - Pestilentia, shaun ofthe dead scythe animated corpses ipsa screams.
@@ -87,8 +87,8 @@ AcademicEducation:
     - Name: Dog University
       Organisation: Dog school A
       Website: https://www.example.com
-      StartDate: 01.01.2010
-      EndDate: 30.05.2014
+      StartDate: 01/2010
+      EndDate: 05/2014
       Qualification: Master of Arts
 
 ProfessionalTraining:
@@ -98,8 +98,8 @@ ProfessionalTraining:
     - Name: Dog Professional Training
       Organisation: Dog school B
       Website: https://www.example.com
-      StartDate: 01.01.2010
-      EndDate: 30.05.2014
+      StartDate: 01/2010
+      EndDate: 05/2014
       Qualification: Guard dog
 
 SchoolEducation:
@@ -109,8 +109,8 @@ SchoolEducation:
     - Name: Secondary school
       Organisation: ACME Secondary School
       Website: https://www.example.com
-      StartDate: 01.01.2010
-      EndDate: 30.05.2014
+      StartDate: 01/2010
+      EndDate: 05/2014
       Qualification: Advanced technical college certificate
 
 FurtherEducation:
@@ -120,8 +120,8 @@ FurtherEducation:
     - Name: PersonalTrainer
       Organisation: ACME University
       Website: https://www.example.com
-      StartDate: 01.01.2010
-      EndDate: 30.05.2014
+      StartDate: 01/2010
+      EndDate: 05/2014
       Qualification: PersonalTrainer A-License
 
 Diplomas:

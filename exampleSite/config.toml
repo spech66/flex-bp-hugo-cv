@@ -11,6 +11,9 @@ enableInlineShortcodes = true
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ["error-remote-getjson"]
 
+# Scroll Spy has problems with german umlauts and other non ascii characters
+removePathAccents = true
+
 # Theme specific examples
 author = "Sebastian Pech"
 copyright = "Sebastian Pech"
