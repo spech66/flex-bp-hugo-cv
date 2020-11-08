@@ -94,8 +94,14 @@ h2 {
     text-transform: uppercase;
 }
 
-a {
+a, a:link, a:active {
     color: #2E74B5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2E74B5;
+    text-decoration: underline;
 }
 
 body.dark-theme a {
@@ -105,6 +111,10 @@ body.dark-theme a {
 img {
     width: 100%;
     object-fit: cover;
+}
+
+footer {
+    margin-top: 2rem;
 }
 
 /*******************************************************************************
@@ -123,7 +133,7 @@ nav ul {
     padding: 0;
 }
 
-nav ul li a {
+nav ul li a, nav ul li a:link, nav ul li a:hover, nav ul li a:active {
     display: block;
     padding: 0.5rem 1rem;
     color: #2E74B5;
@@ -132,7 +142,7 @@ nav ul li a {
 
 nav ul li:hover {
     background: #ffffff;
-    transition: all 400ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 body.dark-theme nav ul li:hover {
@@ -167,6 +177,7 @@ body.dark-theme nav ul li.active {
     background: #ffffff;
     border: 1px solid #2E74B5;
     font-size: 1.5rem;
+    color: #2E74B5;
     text-decoration: none;
     margin: 4px;
 }
