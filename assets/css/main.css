@@ -269,3 +269,18 @@ body.dark-theme nav ul li.active {
 body.dark-theme .fabs .btn {
     background: #444444;
 }
+
+/*******************************************************************************
+ * print
+ ******************************************************************************/
+
+@media print {
+    h1, h2, h3, h4, h5, h6, .listsimple ::marker, a, a:visited {
+        color: #000000;
+        background-color: #ffffff;
+        border-color: #000000;
+    }
+    .fabs, .sidebar, footer, .tag, .list-inline-item {
+        display: none;
+    }
+}

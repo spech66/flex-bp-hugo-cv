@@ -30,6 +30,7 @@ Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootst
 ## Features
 
 - Color themes
+- Print css media
 - SEO best practices supported (Schema.org, open graph, meta information, ...)
 - Automatically resizing of images
 - One minified file per ressource only (js, css)
@@ -70,11 +71,11 @@ hugo server --themesDir ../..
 
 ## Configuration and theme specific settings
 
-TODO
+None yet. See `config.toml` in the `exampleSite` folder for best settings.
 
 ## Screenshots of cofigurations
 
-![CV Theme](https://raw.githubusercontent.com/spech66/flex-bp-hugo-cv/master/images/tn.png)
+![CV Theme](https://raw.githubusercontent.com/spech66/flex-bp-hugo-cv/main/images/tn.png)
 
 ## Google Analytics
 

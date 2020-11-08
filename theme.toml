@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/spech66/flex-bp-hugo-cv/blob/master/LICENSE"
 description = "Flexbox based Hugo CV theme which provides out of the box best practices."
 homepage = "https://github.com/spech66/flex-bp-hugo-cv/"
-tags = ["minimalist", "minimal", "cv", "resume", "clean", "simple", "responsive", "google analytics", "light", "fast", "dark", "pages", "font awesome", "fontawesome", "multilingual", "customizable", "mobile"]
+tags = ["minimalist", "minimal", "cv", "flexbox", "printable", "resume", "clean", "simple", "responsive", "google analytics", "light", "fast", "dark", "pages", "font awesome", "fontawesome", "multilingual", "customizable", "mobile"]
 features = ["responsive", "google analytics", "open graph", "twitter cards"]
 min_version = "0.57.0"
 
