@@ -1,10 +1,11 @@
 <div class="fabs">
-    <button class="btn-toggle-theme btn"><i class="fas fa-adjust"></i></button>
     {{ if .IsTranslated }}
         {{ range $.Site.Home.AllTranslations }}
             <a href="{{ .RelPermalink }}" class="btn">{{ .Language.LanguageName }}</a>
         {{ end }}
     {{ end }}
+    <button class="btn-toggle-theme btn"><i class="fas fa-adjust"></i></button>
+    <a href="#" class="btn"><i class="fas fa-arrow-circle-up"></i></a>    
 </div>
 
 <footer>

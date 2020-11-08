@@ -1,0 +1,16 @@
+{{ $data := (.Scratch.Get "content").Experience }}
+{{ with $data }}
+<section id="section-{{ .Title | urlize }}">
+    <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
+    {{ range $data.Sections }}
+        <h3>{{ .Name }}</h3>
+        {{ .Empolyer }} {{ .Website }} {{ .StartDate }} {{ .EndDate }}
+        {{ range .Details }}
+            <p>{{ . }}</p>
+        {{ end }}
+        {{ range .Skills }}
+            <p>{{ . }}</p>
+        {{ end }}
+    {{ end }}
+</section>
+{{ end }}

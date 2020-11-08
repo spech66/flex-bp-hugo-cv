@@ -8,11 +8,29 @@
     <img src="{{ $photoimg.RelPermalink }}" width="{{ $photoimg.Width }}" height="{{ $photoimg.Height }}" alt="{{ $alt }}" />
 {{ end }}
 
+<!--<nav>
+    <ul>
+    {{ range (.Scratch.Get "content") }}
+        <li><a href="#section-{{ .Title | urlize }}"><i class="{{ .Icon }}"></i> {{ .Title }}</a></li>
+    {{ end }}
+    </ul>
+</nav>-->
+
 <nav>
     <ul>
-        <li><a href="#">Zombie 2</a></li>
-        <li><a href="#section-test-2">Zombie 2</a></li>
-        <li><a href="#section-test-7">Zombie 7</a></li>
-        <li><a href="#section-test-10">Zombie 10</a></li>
+        {{ $data := (.Scratch.Get "content") }}
+        <li><a href="#section-{{ $data.PersonalData.Title | urlize }}"><i class="{{ $data.PersonalData.Icon }}"></i> {{ $data.PersonalData.Title }}</a></li>
+        <li><a href="#section-{{ $data.BriefProfile.Title | urlize }}"><i class="{{ $data.BriefProfile.Icon }}"></i> {{ $data.BriefProfile.Title }}</a></li>
+        <li><a href="#section-{{ $data.Experience.Title | urlize }}"><i class="{{ $data.Experience.Icon }}"></i> {{ $data.Experience.Title }}</a></li>
+        <li><a href="#section-{{ $data.AcademicEducation.Title | urlize }}"><i class="{{ $data.AcademicEducation.Icon }}"></i> {{ $data.AcademicEducation.Title }}</a></li>
+        <li><a href="#section-{{ $data.ProfessionalTraining.Title | urlize }}"><i class="{{ $data.ProfessionalTraining.Icon }}"></i> {{ $data.ProfessionalTraining.Title }}</a></li>
+        <li><a href="#section-{{ $data.SchoolEducation.Title | urlize }}"><i class="{{ $data.SchoolEducation.Icon }}"></i> {{ $data.SchoolEducation.Title }}</a></li>
+        <li><a href="#section-{{ $data.FurtherEducation.Title | urlize }}"><i class="{{ $data.FurtherEducation.Icon }}"></i> {{ $data.FurtherEducation.Title }}</a></li>
+        <li><a href="#section-{{ $data.Diplomas.Title | urlize }}"><i class="{{ $data.Diplomas.Icon }}"></i> {{ $data.Diplomas.Title }}</a></li>
+        <li><a href="#section-{{ $data.Languages.Title | urlize }}"><i class="{{ $data.Languages.Icon }}"></i> {{ $data.Languages.Title }}</a></li>
+        <li><a href="#section-{{ $data.Organizations.Title | urlize }}"><i class="{{ $data.Organizations.Icon }}"></i> {{ $data.Organizations.Title }}</a></li>
+        <li><a href="#section-{{ $data.Skills.Title | urlize }}"><i class="{{ $data.Skills.Icon }}"></i> {{ $data.Skills.Title }}</a></li>
+        <li><a href="#section-{{ $data.Interests.Title | urlize }}"><i class="{{ $data.Interests.Icon }}"></i> {{ $data.Interests.Title }}</a></li>
+        <li><a href="#section-{{ $data.Contacts2.Title | urlize }}"><i class="{{ $data.Contacts2.Icon }}"></i> {{ $data.Contacts2.Title }}</a></li>
     </ul>
 </nav>

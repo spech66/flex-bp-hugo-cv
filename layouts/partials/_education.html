@@ -1,0 +1,13 @@
+{{ $s := slice (.Scratch.Get "content").AcademicEducation (.Scratch.Get "content").ProfessionalTraining (.Scratch.Get "content").SchoolEducation (.Scratch.Get "content").FurtherEducation }}
+{{ range $s }}
+    {{ with . }}
+    <section id="section-{{ .Title | urlize }}">
+        <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
+        {{ range .Sections }}
+            <h3>{{ .Name }}</h3>
+            {{ .Organisation }} {{ .Website }} {{ .StartDate }} {{ .EndDate }}
+            {{ .Qualification }}
+        {{ end }}
+    </section>
+    {{ end }}
+{{ end }}

@@ -1,9 +1,18 @@
 {{ define "main" }}
 
+{{ $content := (index .Site.Data .Site.Language.Lang) }}
+{{ $content := (index $content "content") }}
+{{ .Scratch.Set "content" $content }}
+
 <div class="container">
     <main>
         {{- partial "_header.html" . -}}
-        Content
+        {{- partial "_personaldata.html" . -}}
+        {{- partial "_briefprofile.html" . -}}
+        {{- partial "_experience.html" . -}}
+        {{- partial "_education.html" . -}}
+        {{- partial "_lists.html" . -}}
+        {{- partial "_contacts.html" . -}}
         {{- partial "_footer.html" . -}}
     </main>
     <aside class="sidebar">

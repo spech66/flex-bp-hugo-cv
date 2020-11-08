@@ -1,0 +1,12 @@
+{{ $data := (.Scratch.Get "content").BriefProfile }}
+{{ with $data }}
+<section id="section-{{ .Title | urlize }}">
+    <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
+    {{ range $data.Sections }}
+        <h3>{{ .Name }}</h3>
+        {{ range .Items }}
+            <p>{{ . }}</p>
+        {{ end }}
+    {{ end }}
+</section>
+{{ end }}
