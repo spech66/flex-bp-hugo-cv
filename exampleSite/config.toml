@@ -36,7 +36,7 @@ theme="flex-bp-hugo-cv"
 
 [params]
   description = "Text about the site"
-  customDateFormat = "02.01.2006"
+  customDateFormat = "01/2006" # "02.01.2006"
   # themeColor="light" # dark, light
   # js=["/js/test_site.js"]
   # css=["/css/test_site.css"]
