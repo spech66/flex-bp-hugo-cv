@@ -292,3 +292,7 @@ body.dark-theme .fabs .btn {
 .fa, .far, .fas {
     margin-right: 8px;
 }
+
+.fabs .fas {
+    margin-right: 0px;
+}
