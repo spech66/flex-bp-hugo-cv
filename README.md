@@ -66,12 +66,14 @@ git pull
 Go to the `exampleSite` folder from the theme `themes/flex-bp-hugo-cv/exampleSite` and run the following command.
 
 ```sh
-hugo server --themesDir ../..
+hugo server --themesDir ../.. --minify
 ```
 
 ## Configuration and theme specific settings
 
 None yet. See `config.toml` in the `exampleSite` folder for best settings.
+
+Best run with `--minify` flag for hugo.
 
 ## Screenshots of cofigurations
 
