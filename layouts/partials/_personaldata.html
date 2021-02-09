@@ -4,7 +4,7 @@
     <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
     <ul class="listspecial">
         {{ range $data.Contacts }}
-            <li><strong><i class="{{ .Icon }}"></i> {{ .Name }}</strong>{{ .Value }}</p>
+            <li><strong><i class="{{ .Icon }}"></i> {{ .Name }}</strong>{{ .Value | markdownify }}</p>
         {{ end }}
     </ul>
 </section>
