@@ -2,18 +2,19 @@
  * Reset
  ******************************************************************************/
 
- * {
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /*******************************************************************************
@@ -24,7 +25,7 @@ body {
     display: flex;
     justify-content: center;
 
-    min-height: 100vh;        
+    min-height: 100vh;
 
     color: #222;
     background: #c0c0c0;
@@ -37,7 +38,7 @@ body.dark-theme {
 
 .container {
     display: flex;
-	flex-direction: column;
+    flex-direction: column;
 }
 
 .sidebar {
@@ -63,7 +64,7 @@ body.dark-theme main {
 
 .innerContainer {
     display: flex;
-	flex-direction: row;
+    flex-direction: row;
     flex-wrap: nowrap;
     margin-bottom: 2rem;
 }
@@ -96,7 +97,7 @@ body.dark-theme main {
         flex: 5;
         min-height: 100vh;
     }
-    
+
     .sidebar {
         order: 1;
         flex: 1.4;
@@ -108,7 +109,7 @@ body.dark-theme main {
  ******************************************************************************/
 
 h1 {
-    color: #2E74B5;
+    color: #2e74b5;
     text-transform: uppercase;
     font-size: 4rem;
     letter-spacing: 1.4px;
@@ -126,10 +127,10 @@ body.dark-theme .subtitle {
 }
 
 h2 {
-    border-bottom: 1px solid #2E74B5;
+    border-bottom: 1px solid #2e74b5;
     margin-top: 1.6rem;
     margin-bottom: 0.8rem;
-    color: #2E74B5;
+    color: #2e74b5;
     text-transform: uppercase;
     letter-spacing: 1.2px;
 }
@@ -140,18 +141,20 @@ h3 {
     margin-bottom: 0.8rem;
 }
 
-a, a:link, a:active {
-    color: #2E74B5;
+a,
+a:link,
+a:active {
+    color: #2e74b5;
     text-decoration: none;
 }
 
 a:hover {
-    color: #2E74B5;
+    color: #2e74b5;
     text-decoration: underline;
 }
 
 body.dark-theme a {
-    color: #2E74B5;
+    color: #2e74b5;
 }
 
 img {
@@ -187,7 +190,7 @@ section h2 {
 }
 
 .listsimple ::marker {
-    color: #2E74B5;
+    color: #2e74b5;
 }
 
 .list-inline-item {
@@ -197,7 +200,7 @@ section h2 {
 .tag {
     border-radius: 8px;
     text-align: center;
-    background-color: #2E74B5;
+    background-color: #2e74b5;
     color: #ffffff;
     padding: 2px 8px;
 }
@@ -207,8 +210,8 @@ section h2 {
  ******************************************************************************/
 
 nav {
-	position: sticky;
-	top: 0px;
+    position: sticky;
+    top: 0px;
     white-space: nowrap;
 }
 
@@ -217,10 +220,13 @@ nav ul {
     padding: 0;
 }
 
-nav ul li a, nav ul li a:link, nav ul li a:hover, nav ul li a:active {
+nav ul li a,
+nav ul li a:link,
+nav ul li a:hover,
+nav ul li a:active {
     display: block;
     padding: 0.5rem 1rem;
-    color: #2E74B5;
+    color: #2e74b5;
     text-decoration: none;
 }
 
@@ -259,9 +265,9 @@ body.dark-theme nav ul li.active {
     width: 48px;
     border-radius: 50%;
     background: #ffffff;
-    border: 1px solid #2E74B5;
+    border: 1px solid #2e74b5;
     font-size: 1.5rem;
-    color: #2E74B5;
+    color: #2e74b5;
     text-decoration: none;
     margin: 4px;
 }
@@ -275,12 +281,24 @@ body.dark-theme .fabs .btn {
  ******************************************************************************/
 
 @media print {
-    h1, h2, h3, h4, h5, h6, .listsimple ::marker, a, a:visited {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .listsimple ::marker,
+    a,
+    a:visited {
         color: #000000;
         background-color: #ffffff;
         border-color: #000000;
     }
-    .fabs, .sidebar, footer, .tag, .list-inline-item {
+    .fabs,
+    .sidebar,
+    footer,
+    .tag,
+    .list-inline-item {
         display: none;
     }
 }
@@ -289,7 +307,9 @@ body.dark-theme .fabs .btn {
  * hugo minify
  ******************************************************************************/
 
-.fa, .far, .fas {
+.fa,
+.far,
+.fas {
     margin-right: 8px;
 }
 

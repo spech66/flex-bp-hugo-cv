@@ -7,18 +7,18 @@ const currentTheme = localStorage.getItem("theme");
 
 // Set to dark if stored in local storage or no current theme and user prefers darkness 
 if (currentTheme == "dark") {
-  document.body.classList.toggle("dark-theme");
+	document.body.classList.toggle("dark-theme");
 } else if (currentTheme != "light" || currentTheme == null) {
-  if(prefersDarkScheme.matches) {
-    document.body.classList.toggle("dark-theme");
-  }
+	if (prefersDarkScheme.matches) {
+		document.body.classList.toggle("dark-theme");
+	}
 }
 
 // Theme toggle button handler
-btn.addEventListener("click", function() {
-  document.body.classList.toggle("dark-theme");
-  var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
-  localStorage.setItem("theme", theme);
+btn.addEventListener("click", function () {
+	document.body.classList.toggle("dark-theme");
+	var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+	localStorage.setItem("theme", theme);
 });
 
 // -----------------------------------------------------------------------------
@@ -30,11 +30,11 @@ window.addEventListener('DOMContentLoaded', () => {
 		entries.forEach(entry => {
 			const id = entry.target.getAttribute('id');
 			if (entry.intersectionRatio > 0) {
-				if(document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
+				if (document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
 					document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
 				}
 			} else {
-				if(document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
+				if (document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
 					document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.remove('active');
 				}
 			}
@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	// Track all sections that have an `id` applied
 	document.querySelectorAll('section[id]').forEach((section) => {
 		observer.observe(section);
-	});	
+	});
 });
 
 // -----------------------------------------------------------------------------
