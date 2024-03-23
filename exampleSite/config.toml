@@ -17,7 +17,6 @@ removePathAccents = true
 # Theme specific examples
 author = "Sebastian Pech"
 copyright = "Sebastian Pech"
-# googleAnalytics = "UA-123-45"
 enableRobotsTXT = true
 pygmentsCodeFences = true
 canonifyurls = true
