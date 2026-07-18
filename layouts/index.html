@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ $content := (index hugo.Data .Site.Language.Lang) }}
+{{ $content := (index hugo.Data .Site.Language.Name) }}
 {{ $content := (index $content "content") }}
 {{ .Scratch.Set "content" $content }}
 
