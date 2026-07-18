@@ -3,7 +3,7 @@ baseURL = "https://gohugo.io"
 title = "Hugo Themes"
 # author = "Steve Francia"
 # copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
-languageCode = "en"
+locale = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
@@ -47,12 +47,12 @@ theme="flex-bp-hugo-cv"
 
 [languages]
   [languages.en]
-    languageName = "EN"
+    label = "EN"
     title = "CV"
     weight = 1
     [languages.en.params]
   [languages.de]
-    languageName = "DE"
+    label = "DE"
     title = "Lebenslauf"
     weight = 2
     [languages.de.params]

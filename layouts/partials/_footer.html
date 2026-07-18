@@ -1,7 +1,7 @@
 <div class="fabs">
     {{ if .IsTranslated }}
         {{ range $.Site.Home.AllTranslations }}
-            <a href="{{ .RelPermalink }}" class="btn">{{ .Language.LanguageName }}</a>
+            <a href="{{ .RelPermalink }}" class="btn">{{ .Language.Label }}</a>
         {{ end }}
     {{ end }}
     <button class="btn-toggle-theme btn" aria-label="Toggle theme"><i class="fas fa-adjust"></i></button>
