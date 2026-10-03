@@ -1,5 +1,8 @@
 {{ $data := (.Scratch.Get "content").PersonalData }}
 {{ with $data }}
-<h1>{{ .Name }} {{ .Suffix }}</h1>
-<div class="subtitle">{{ .CurrentWorkplace }}</div>
+<header class="cv-head">
+    {{- with .Suffix }}<p class="cv-kicker">{{ strings.TrimLeft "- " . }}</p>{{ end }}
+    <h1>{{ .Name }}</h1>
+    {{- with .CurrentWorkplace }}<p class="subtitle">{{ . }}</p>{{ end }}
+</header>
 {{ end }}

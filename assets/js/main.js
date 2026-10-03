@@ -1,52 +1,40 @@
 // -----------------------------------------------------------------------------
-// Dark Theme handling based on https://css-tricks.com/a-complete-guide-to-dark-theme-on-the-web/
+// Dark theme toggle. The initial theme is set inline in baseof.html.
 // -----------------------------------------------------------------------------
-const btn = document.querySelector('.btn-toggle-theme');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-const currentTheme = localStorage.getItem("theme");
-
-// Set to dark if stored in local storage or no current theme and user prefers darkness 
-if (currentTheme == "dark") {
-	document.body.classList.toggle("dark-theme");
-} else if (currentTheme != "light" || currentTheme == null) {
-	if (prefersDarkScheme.matches) {
+var themeButton = document.querySelector(".btn-toggle-theme");
+if (themeButton) {
+	themeButton.addEventListener("click", function () {
 		document.body.classList.toggle("dark-theme");
-	}
+		var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+		try { localStorage.setItem("theme", theme); } catch (e) {}
+	});
 }
 
-// Theme toggle button handler
-btn.addEventListener("click", function () {
-	document.body.classList.toggle("dark-theme");
-	var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
-	localStorage.setItem("theme", theme);
-});
+// -----------------------------------------------------------------------------
+// Print button
+// -----------------------------------------------------------------------------
+var printButton = document.querySelector(".btn-print");
+if (printButton) {
+	printButton.addEventListener("click", function () { window.print(); });
+}
 
 // -----------------------------------------------------------------------------
-// ScrollSpy https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
+// ScrollSpy: mark the navigation entry of the topmost section in view
 // -----------------------------------------------------------------------------
-
-window.addEventListener('DOMContentLoaded', () => {
-	const observer = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			const id = entry.target.getAttribute('id');
-			if (entry.intersectionRatio > 0) {
-				if (document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
-					document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.add('active');
-				}
-			} else {
-				if (document.querySelector(`nav ul li a[href="#${id}"]`) != null) {
-					document.querySelector(`nav ul li a[href="#${id}"]`).parentElement.classList.remove('active');
-				}
-			}
+window.addEventListener("DOMContentLoaded", function () {
+	if (!("IntersectionObserver" in window)) { return; }
+	var sections = Array.prototype.slice.call(document.querySelectorAll("section[id]"));
+	var items = {};
+	document.querySelectorAll('nav a[href^="#section-"]').forEach(function (a) {
+		items[a.getAttribute("href").slice(1)] = a.parentElement;
+	});
+	var visible = {};
+	var observer = new IntersectionObserver(function (entries) {
+		entries.forEach(function (entry) { visible[entry.target.id] = entry.isIntersecting; });
+		var current = sections.filter(function (s) { return visible[s.id]; })[0];
+		Object.keys(items).forEach(function (id) {
+			items[id].classList.toggle("active", current !== undefined && current.id === id);
 		});
-	});
-
-	// Track all sections that have an `id` applied
-	document.querySelectorAll('section[id]').forEach((section) => {
-		observer.observe(section);
-	});
+	}, { rootMargin: "0px 0px -60% 0px" });
+	sections.forEach(function (section) { observer.observe(section); });
 });
-
-// -----------------------------------------------------------------------------
-// Misc
-// -----------------------------------------------------------------------------

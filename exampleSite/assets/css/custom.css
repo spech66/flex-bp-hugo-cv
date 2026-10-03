@@ -1,22 +1,15 @@
-/* roboto-regular - latin */
+/* Custom styles for your CV. Example: own colors and a self-hosted font.
+   Use woff2 only, and add a bold weight if you use one (headings, labels).
+
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
+    font-family: 'MyFont';
     font-weight: 400;
-    src: url('../fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
-    src: local('Roboto'), local('Roboto-Regular'),
-         url('../fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
     font-display: swap;
-}
-  
-body {
-    font-family: 'Roboto', sans-serif;
+    src: url('../fonts/myfont-latin-400.woff2') format('woff2');
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
+:root {
+    --cv-font: 'MyFont', system-ui, sans-serif;
+    --cv-accent: #2e74b5;
 }
+*/

@@ -1,23 +1,29 @@
 {{ $data := (.Scratch.Get "content").Experience }}
 {{ with $data }}
 <section id="section-{{ .Title | urlize }}">
-    <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
+    <h2>{{ partial "icon.html" .Icon }}{{ .Title }}</h2>
     {{ range $data.Sections }}
-        <div class="innerContainer">
-            <h3 class="innerLeft">{{ .StartDate }}<br />-<br/> {{ .EndDate }}</h3>
+        <article class="innerContainer">
+            <p class="innerLeft when">{{ .StartDate }} – {{ .EndDate }}</p>
             <div class="innerRight">
                 <h3>{{ .Name }}</h3>
-                <p><a href="{{ .Website }}" target="_blank" rel="noopener noreferrer">{{ .Empolyer }}</a></p>
-                {{ range .Details }}
-                    <p>{{ . }}</p>
+                <p class="org">{{ with .Website }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ end }}{{ .Empolyer | default .Employer }}{{ with .Website }}</a>{{ end }}</p>
+                {{ with .Details }}
+                <ul class="details">
+                    {{ range . }}
+                        <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
                 {{ end }}
-                <p>
-                    {{ range .Skills }}
+                {{ with .Skills }}
+                <p class="tags">
+                    {{ range . }}
                         <span class="tag">{{ . }}</span>
                     {{ end }}
                 </p>
+                {{ end }}
             </div>
-        </div>
+        </article>
     {{ end }}
 </section>
 {{ end }}

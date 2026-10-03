@@ -1,6 +1,6 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta name="author" content="{{ range .Site.Params.Author }}{{ . }}{{ end }}">
+<meta name="author" content="{{ with .Site.Params.author.name }}{{ . }}{{ else }}{{ range .Site.Params.Author }}{{ . }}{{ end }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
 {{- if in (slice "taxonomy" "term") .Kind }}
 <meta name="robots" content="noindex,follow">
@@ -16,10 +16,9 @@
 
 {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ $.Site.Title }}"/>{{ end }}
 
-{{ $cssfontawesome := resources.Get "/css/fontawesome.min.css" }}
 {{ $cssmain := resources.Get "/css/main.css" }}
 {{ $customcss := resources.Get "/css/custom.css" }}
-{{ $allcss := slice $cssfontawesome $cssmain $customcss | resources.Concat "/css/vendor.css" | minify | fingerprint "sha512" }}
+{{ $allcss := slice $cssmain $customcss | resources.Concat "/css/vendor.css" | minify | fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $allcss.RelPermalink }}" integrity="{{ $allcss.Data.Integrity }}">
 
 {{- range .Site.Params.csscdn }}

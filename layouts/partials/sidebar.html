@@ -1,36 +1,26 @@
-{{ $photoimg := resources.Get "photo.jpg" }}
-{{ $alt := "Photo" }}
+{{- $data := .Scratch.Get "content" -}}
+{{- with resources.Get "photo.jpg" }}
+    {{- $photo := . -}}
+    {{- if in (slice "jpeg" "png") .MediaType.SubType -}}
+        {{- $size := cond (lt (math.Min .Width .Height) 264) (math.Min .Width .Height) 264 -}}
+        {{- $photo = .Process (printf "fill %dx%d Top webp q82" (int $size) (int $size)) -}}
+    {{- end }}
+<img class="sidebar-photo" src="{{ $photo.RelPermalink }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" alt="{{ with $data.PersonalData }}{{ .Name }}{{ else }}Photo{{ end }}">
+{{- end }}
 
-{{ if gt $photoimg.Width 320 }}
-    {{ $image := $photoimg.Resize "320x" }}
-    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $alt }}" />
-{{ else }}
-    <img src="{{ $photoimg.RelPermalink }}" width="{{ $photoimg.Width }}" height="{{ $photoimg.Height }}" alt="{{ $alt }}" />
-{{ end }}
+{{- with $data.PersonalData }}
+<div class="sidebar-who">
+    <b>{{ .Name }}</b>
+    {{- with .CurrentWorkplace }}<span>{{ . }}</span>{{ end }}
+</div>
+{{- end }}
 
-<!--<nav>
+<nav aria-label="Sections">
     <ul>
-    {{ range (.Scratch.Get "content") }}
-        <li><a href="#section-{{ .Title | urlize }}"><i class="{{ .Icon }}"></i> {{ .Title }}</a></li>
-    {{ end }}
-    </ul>
-</nav>-->
-
-<nav>
-    <ul>
-        {{ $data := (.Scratch.Get "content") }}
-        <li><a href="#section-{{ $data.PersonalData.Title | urlize }}"><i class="{{ $data.PersonalData.Icon }}"></i> {{ $data.PersonalData.Title }}</a></li>
-        <li><a href="#section-{{ $data.BriefProfile.Title | urlize }}"><i class="{{ $data.BriefProfile.Icon }}"></i> {{ $data.BriefProfile.Title }}</a></li>
-        <li><a href="#section-{{ $data.Experience.Title | urlize }}"><i class="{{ $data.Experience.Icon }}"></i> {{ $data.Experience.Title }}</a></li>
-        <li><a href="#section-{{ $data.AcademicEducation.Title | urlize }}"><i class="{{ $data.AcademicEducation.Icon }}"></i> {{ $data.AcademicEducation.Title }}</a></li>
-        <li><a href="#section-{{ $data.ProfessionalTraining.Title | urlize }}"><i class="{{ $data.ProfessionalTraining.Icon }}"></i> {{ $data.ProfessionalTraining.Title }}</a></li>
-        <li><a href="#section-{{ $data.SchoolEducation.Title | urlize }}"><i class="{{ $data.SchoolEducation.Icon }}"></i> {{ $data.SchoolEducation.Title }}</a></li>
-        <li><a href="#section-{{ $data.FurtherEducation.Title | urlize }}"><i class="{{ $data.FurtherEducation.Icon }}"></i> {{ $data.FurtherEducation.Title }}</a></li>
-        <li><a href="#section-{{ $data.Diplomas.Title | urlize }}"><i class="{{ $data.Diplomas.Icon }}"></i> {{ $data.Diplomas.Title }}</a></li>
-        <li><a href="#section-{{ $data.Languages.Title | urlize }}"><i class="{{ $data.Languages.Icon }}"></i> {{ $data.Languages.Title }}</a></li>
-        <li><a href="#section-{{ $data.Organizations.Title | urlize }}"><i class="{{ $data.Organizations.Icon }}"></i> {{ $data.Organizations.Title }}</a></li>
-        <li><a href="#section-{{ $data.Skills.Title | urlize }}"><i class="{{ $data.Skills.Icon }}"></i> {{ $data.Skills.Title }}</a></li>
-        <li><a href="#section-{{ $data.Interests.Title | urlize }}"><i class="{{ $data.Interests.Icon }}"></i> {{ $data.Interests.Title }}</a></li>
-        <li><a href="#section-{{ $data.Contacts2.Title | urlize }}"><i class="{{ $data.Contacts2.Icon }}"></i> {{ $data.Contacts2.Title }}</a></li>
+        {{- range partial "sections.html" . }}
+            {{- with index $data . }}
+        <li><a href="#section-{{ .Title | urlize }}">{{ partial "icon.html" .Icon }}<span>{{ .Title }}</span></a></li>
+            {{- end }}
+        {{- end }}
     </ul>
 </nav>

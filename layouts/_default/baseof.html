@@ -7,6 +7,8 @@
         {{- partial "head.html" . -}}
     </head>
     <body>
+        {{- /* Set the color theme before the first paint to avoid a flash of the wrong theme */}}
+        <script>(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}if(t==="dark"||(t!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.body.classList.add("dark-theme");}})();</script>
         {{- block "main" . }}{{- end }}
         {{- partial "js.html" . -}}
     </body>

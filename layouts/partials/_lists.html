@@ -2,7 +2,7 @@
 {{ range $s }}
     {{ with . }}
     <section id="section-{{ .Title | urlize }}">
-        <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
+        <h2>{{ partial "icon.html" .Icon }}{{ .Title }}</h2>
         <ul class="listsimple">
             {{ range .Items }}
                 <li>{{ . }}</li>

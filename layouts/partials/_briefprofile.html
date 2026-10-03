@@ -1,15 +1,15 @@
 {{ $data := (.Scratch.Get "content").BriefProfile }}
 {{ with $data }}
 <section id="section-{{ .Title | urlize }}">
-    <h2><i class="{{ .Icon }}"></i> {{ .Title }}</h2>
+    <h2>{{ partial "icon.html" .Icon }}{{ .Title }}</h2>
     {{ range $data.Sections }}
         <div class="innerContainer">
             <h3 class="innerLeft">{{ .Name }}</h3>
-            <div class="innerRight">
+            <ul class="innerRight plainlist">
                 {{ range .Items }}
-                    <p>{{ . }}</p>
+                    <li>{{ . }}</li>
                 {{ end }}
-            </div>
+            </ul>
         </div>
     {{ end }}
 </section>

@@ -1,14 +1,15 @@
 <div class="fabs">
     {{ if .IsTranslated }}
         {{ range $.Site.Home.AllTranslations }}
-            <a href="{{ .RelPermalink }}" class="btn">{{ .Language.Label }}</a>
+            <a href="{{ .RelPermalink }}" class="btn"{{ if eq .Lang $.Lang }} aria-current="page"{{ end }}>{{ .Language.Label }}</a>
         {{ end }}
     {{ end }}
-    <button class="btn-toggle-theme btn" aria-label="Toggle theme"><i class="fas fa-adjust"></i></button>
-    <a href="#" class="btn" aria-label="Go to top"><i class="fas fa-arrow-circle-up"></i></a>    
+    <button type="button" class="btn btn-toggle-theme" aria-label="Toggle theme" title="Toggle theme">{{ partial "icon.html" "fas fa-adjust" }}</button>
+    <button type="button" class="btn btn-print" aria-label="Print" title="Print">{{ partial "icon.html" "fas fa-print" }}</button>
+    <a href="#" class="btn" aria-label="Go to top" title="Go to top">{{ partial "icon.html" "fas fa-arrow-up" }}</a>
 </div>
 
 <footer>
-    &copy; {{ now.Format "2006" }} {{ range .Site.Params.Author }}{{ . }}{{ end }}.
+    &copy; {{ now.Format "2006" }} {{ with .Site.Params.author.name }}{{ . }}{{ else }}{{ range .Site.Params.Author }}{{ . }}{{ end }}{{ end }}.
     {{ i18n "themeby" }} <a href="https://www.spech.de" target="_blank" rel="noopener noreferrer">Sebastian Pech</a>.
 </footer>

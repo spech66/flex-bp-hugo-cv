@@ -18,7 +18,7 @@ Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootst
   - [Update the theme](#update-the-theme)
   - [Run example site](#run-example-site)
   - [Configuration and theme specific settings](#configuration-and-theme-specific-settings)
-  - [Screenshots of cofigurations](#screenshots-of-cofigurations)
+  - [Screenshots of configurations](#screenshots-of-configurations)
   - [Google Analytics](#google-analytics)
   - [Schema.org support](#schemaorg-support)
   - [Social Icons](#social-icons)
@@ -29,11 +29,12 @@ Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootst
 
 ## Features
 
-- Color themes
-- Print css media
+- Light and dark mode (follows the system setting, toggle button)
+- Print/PDF layout for A4 (button in the page, no navigation, page breaks between entries)
 - SEO best practices supported (Schema.org, open graph, meta information, ...)
-- Automatically resizing of images
-- One minified file per ressource only (js, css)
+- Photo resized and converted to WebP automatically
+- Icons as inline SVG (Font Awesome Free glyphs, no icon font), system font by default
+- One minified file per resource only (js, css)
 - CDN font support (Google Fonts, ...)
 - Settings for easy customization of layouts and features
 - Icons for Social Media
@@ -71,11 +72,30 @@ hugo server --themesDir ../.. --minify
 
 ## Configuration and theme specific settings
 
-None yet. See `config.toml` in the `exampleSite` folder for best settings.
+None yet. See `config.toml` in the `exampleSite` folder for best settings. The CV content lives in `data/<language>/content.yaml`, the photo in `assets/photo.jpg`.
+
+Icons in the data file keep the Font Awesome class names (`Icon: fas fa-user`), they are rendered as inline SVG from `data/bpicons.json`. Add own icons to that file if you need more.
+
+Colors and the font are CSS variables. Override them in `assets/css/custom.css`:
+
+```css
+:root {
+  --cv-accent: #2e74b5;       /* headings, icons, markers */
+  --cv-accent-text: #245d93;  /* links, readable on white */
+  --cv-font: system-ui, sans-serif;
+}
+
+body.dark-theme {
+  --cv-accent: #7cb4ec;
+  --cv-accent-text: #8cc0f2;
+}
+```
+
+**Upgrading from older versions:** Font Awesome is no longer loaded. Own templates using `<i class="fas fa-...">` should switch to `{{ partial "icon.html" "fas fa-..." }}`.
 
 Best run with `--minify` flag for hugo.
 
-## Screenshots of cofigurations
+## Screenshots of configurations
 
 ![CV Theme](https://raw.githubusercontent.com/spech66/flex-bp-hugo-cv/main/images/tn.png)
 
