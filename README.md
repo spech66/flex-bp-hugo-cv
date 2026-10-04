@@ -2,7 +2,7 @@
 
 Flexbox based Hugo CV theme which provides out of the box best practices like performance and SEO readiness. Using [hugo-best-practices](https://github.com/spech66/hugo-best-practices), [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist) and the [Front-End Performance Checklist](https://github.com/thedaviddias/Front-End-Performance-Checklist).
 
-Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootstrap-bp-hugo-theme), [Materialize-BP](https://github.com/spech66/materialize-bp-hugo-theme),
+Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootstrap-bp-hugo-theme), [Flex-BP hugo CV](https://github.com/spech66/flex-bp-hugo-cv),
 [Bootstrap-BP hugo startpage](https://github.com/spech66/bootstrap-bp-hugo-startpage).
 
 ## Table of contents
