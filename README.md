@@ -4,6 +4,7 @@ Flexbox based Hugo CV theme which provides out of the box best practices like pe
 
 Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootstrap-bp-hugo-theme), [Flex-BP hugo CV](https://github.com/spech66/flex-bp-hugo-cv),
 [Bootstrap-BP hugo startpage](https://github.com/spech66/bootstrap-bp-hugo-startpage).
+Best practices and ideas for Hugo: [hugo-best-practices](https://github.com/spech66/hugo-best-practices).
 
 ## Table of contents
 
@@ -24,6 +25,7 @@ Other themes by Sebastian Pech: [Bootstrap-BP](https://github.com/spech66/bootst
   - [Social Icons](#social-icons)
   - [Custom CSS/JS](#custom-cssjs)
   - [Misc](#misc)
+  - [Sites using this theme](#sites-using-this-theme)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -208,3 +210,7 @@ csscdn:
 
 - Dog Photo - Image by [Nikki Luijpers](https://pixabay.com/users/lovechicco-14817111/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5692796) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5692796).
 - [CSS Tricks - A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
+
+## Sites using this theme
+
+- [cv.spech.de](https://cv.spech.de/): CV in German and English
