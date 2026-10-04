@@ -105,21 +105,32 @@ The native Hugo Google Analytics template has been removed!
 
 ## Schema.org support
 
-Provide one author to enable the Schema.org support.
+The start page gets a `ProfilePage` with the person of the CV as `mainEntity` (plus `WebSite`), filled from the CV data of the page language (`data/<language>/content.yaml`):
 
-```yaml
-[params.author]  
-  name = "Sebastian Pech"
+- `name`: `PersonalData.Name` (else `params.author.name`), `image`: `assets/photo.jpg` (else `params.authorImage`), `description`: `params.description`
+- `jobTitle` and `worksFor`: the first `Experience` entry, if its `EndDate` is no date like `05/2014` (e.g. "Today"). `params.author.jobTitle` overrides the job title.
+- `alumniOf`: organisations of `AcademicEducation`, `ProfessionalTraining`, `SchoolEducation` and `FurtherEducation`
+- `hasCredential`: the `Qualification` of these entries and the `Diplomas` items (leading date like `01/2020` removed). Add `Credential: false` to an entry that ended without a degree.
+- `knowsAbout`: the `Skills` items and the skills of the `Experience` entries (or `params.author.knowsAbout`), `knowsLanguage`: the `Languages` items without the level in brackets
+- `sameAs`: the profile links of `params.social`
+
+Address, phone, email and birthday are not added on purpose: they stay readable on the page, but are not handed to crawlers in a machine readable form.
+
+For language specific descriptions put `description` into the language params:
+
+```toml
+[languages.en]
+  title = "CV"
+  [languages.en.params]
+    description = "Developer and coach"
 ```
 
 ## Social Icons
 
-Icons for Social Media. Add the block to the config.
+Icons for Social Media in the contact section. Add the block to the config, empty values are skipped. The links of profiles also go into the `sameAs` list of the schema and get `rel="me"`.
 
-```yaml
-# Sets Social Media icons to appear and link to your account. Value should be your
-# username unless otherwise noted.
-# Code from https://themes.gohugo.io/future-imperfect/ theme
+```toml
+# Value should be your username unless otherwise noted.
 [params.social]
   # Coding Communities
   github           = ""
@@ -144,24 +155,29 @@ Icons for Social Media. Add the block to the config.
   slideshare       = ""
   # Social Networks
   facebook         = ""
-  googleplus       = ""
   reddit           = ""
   quora            = ""
-  youtube          = ""
+  youtube          = "" # e.g. "@name" or "channel/ID"
+  youtube2         = "" # second channel
   vimeo            = ""
   whatsapp         = "" # WhatsApp Number
   instagram        = ""
   tiktok           = "" # @username
   tumblr           = ""
-  twitter          = ""
-  skype            = ""
+  twitter          = "" # links to x.com
+  mastodon         = "" # full profile URL, e.g. "https://mastodon.social/@name"
   snapchat         = ""
   pinterest        = ""
   telegram         = ""
   discord          = "" # invite link
+  twitch           = ""
   # Email
   email            = ""
 ```
+
+The networks, their URLs, icons and order are defined in `data/bpsocial.yaml`. Copy it to `data/bpsocial.yaml` in your site to change the order or add a network.
+
+**Upgrading from older versions:** `googleplus` and `skype` were removed (both services are shut down).
 
 ## Custom CSS/JS
 

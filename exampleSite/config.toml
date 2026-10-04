@@ -85,7 +85,6 @@ theme="flex-bp-hugo-cv"
   slideshare       = ""
   # Social Networks
   facebook         = ""
-  googleplus       = ""
   reddit           = ""
   quora            = ""
   youtube          = "" 
@@ -95,7 +94,7 @@ theme="flex-bp-hugo-cv"
   tiktok           = "" # @username
   tumblr           = ""
   twitter          = ""
-  skype            = ""
+  mastodon         = "" # full profile URL
   snapchat         = ""
   pinterest        = ""
   telegram         = ""

@@ -1,8 +1,5 @@
 {{ define "main" }}
 
-{{ $content := (index hugo.Data .Site.Language.Name) }}
-{{ $content := (index $content "content") }}
-{{ .Scratch.Set "content" $content }}
 
 <div class="container">
     <main>

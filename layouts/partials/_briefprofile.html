@@ -1,4 +1,5 @@
-{{ $data := (.Scratch.Get "content").BriefProfile }}
+{{- $cv := partial "cv_data.html" . -}}
+{{ $data := $cv.BriefProfile }}
 {{ with $data }}
 <section id="section-{{ .Title | urlize }}">
     <h2>{{ partial "icon.html" .Icon }}{{ .Title }}</h2>

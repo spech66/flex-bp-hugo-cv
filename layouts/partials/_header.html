@@ -1,4 +1,5 @@
-{{ $data := (.Scratch.Get "content").PersonalData }}
+{{- $cv := partial "cv_data.html" . -}}
+{{ $data := $cv.PersonalData }}
 {{ with $data }}
 <header class="cv-head">
     {{- with .Suffix }}<p class="cv-kicker">{{ strings.TrimLeft "- " . }}</p>{{ end }}

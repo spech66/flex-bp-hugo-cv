@@ -1,0 +1,7 @@
+{{- /*
+  CV data of the page language: data/<language>/content.yaml (e.g. data/de/content.yaml).
+  Usage: {{ $data := partial "cv_data.html" . }}
+*/ -}}
+{{- $content := dict -}}
+{{- with index hugo.Data .Site.Language.Name }}{{ with .content }}{{ $content = . }}{{ end }}{{ end -}}
+{{- return $content -}}

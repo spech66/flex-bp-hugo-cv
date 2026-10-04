@@ -1,4 +1,5 @@
-{{ $s := slice (.Scratch.Get "content").Diplomas (.Scratch.Get "content").Languages (.Scratch.Get "content").Organizations (.Scratch.Get "content").Skills (.Scratch.Get "content").Interests }}
+{{- $cv := partial "cv_data.html" . -}}
+{{ $s := slice $cv.Diplomas $cv.Languages $cv.Organizations $cv.Skills $cv.Interests }}
 {{ range $s }}
     {{ with . }}
     <section id="section-{{ .Title | urlize }}">

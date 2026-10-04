@@ -1,0 +1,13 @@
+{{- /*
+  Photo of the CV: assets/photo.jpg as square WebP (max. 264 px), or false if there is none.
+  Used by sidebar.html and seo_schema.html.
+*/ -}}
+{{- $photo := false -}}
+{{- with resources.Get "photo.jpg" -}}
+    {{- $photo = . -}}
+    {{- if in (slice "jpeg" "png") .MediaType.SubType -}}
+        {{- $size := cond (lt (math.Min .Width .Height) 264) (math.Min .Width .Height) 264 -}}
+        {{- $photo = .Process (printf "fill %dx%d Top webp q82" (int $size) (int $size)) -}}
+    {{- end -}}
+{{- end -}}
+{{- return $photo -}}
