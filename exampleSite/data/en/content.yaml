@@ -134,21 +134,21 @@ Diplomas:
     - 01/2020 Qui tardius moveri
 
 Languages:
-  Title: Sprachkenntnisse
+  Title: Languages
   Icon: fas fa-language
   Items:
     - German (native)
     - English (CEFR Level B2)
 
 Organizations:
-  Title: Organisationen
+  Title: Organizations
   Icon: fas fa-users
   Items:
     - Dog school A
     - Dog school B
 
 Skills:
-  Title: Fähigkeiten
+  Title: Skills
   Icon: fas fa-sliders-h
   Items:
     - Bite
@@ -157,7 +157,7 @@ Skills:
     - Down command
 
 Interests:
-  Title: Interessen
+  Title: Interests
   Icon: fas fa-chess
   Items:
     - Dance
